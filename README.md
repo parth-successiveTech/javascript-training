@@ -1,57 +1,85 @@
 # ATOMIC DESIGN
 
 Atomic design is a design methodology created by brad frost that cosniders creating and maintaining design systems while providing an attractive way of explaining using chemistry
-five components of Atomic design are
-1)Atoms
-2)Molecules
-3)Organisms
-4)Templates
-5)pages
-Atoms-They are the basic building block of in the design system.All elements are individual items consisting of labels,icons,buttons and more
+five components of Atomic design are<br>
+1)Atoms<br>
+2)Molecules<br>
+3)Organisms<br>
+4)Templates<br>
+5)pages<br>
+## Atoms
+They are the basic building block of in the design system.All elements are individual items consisting of labels,icons,buttons and more
 
-Molecules-It is a combined group of atoms ,for instance a form,a label,search input,and button can create a search form molecule
+## Molecules
+It is a combined group of atoms ,for instance a form,a label,search input,and button can create a search form molecule
 
-Organisms-It is a combined group of molecules which is called organisms.This is more significant component.It includes navigation,sidebars and pop ups.
+## Organisms
+It is a combined group of molecules which is called organisms.This is more significant component.It includes navigation,sidebars and pop ups.
 
-Templates-Templates are the combined group of organisms,and this will eventually be forming as a useful web or mobile layout,like a wireframe.
+## Templates
+Templates are the combined group of organisms,and this will eventually be forming as a useful web or mobile layout,like a wireframe.
 
-Pages-Once you create the templates ,you can add actual contents and images to the page,you have a a page containing all the atomic design elements like atoms,molecules,and organisms.
+## Pages
+Once you create the templates ,you can add actual contents and images to the page,you have a a page containing all the atomic design elements like atoms,molecules,and organisms.
 
 # TWElVE FACTOR APP
 
-1)Codebase
-2)Dependencies
-3)Config
-4)Backing services
-5)Build ,release ,run
-6)Processes
-7)Port binding
-8)Concurrency
-9)Disposability
-10)Development/production parity
-11)Logs
-12)Admin Processes
+1)Codebase<br>
+2)Dependencies<br>
+3)Config<br>
+4)Backing services<br>
+5)Build ,release ,run<br>
+6)Processes<br>
+7)Port binding<br>
+8)Concurrency<br>
+9)Disposability<br>
+10)Development/production parity<br>
+11)Logs<br>
+12)Admin Processes<br>
 
-Codebase- Each application must have only a single codebase. Each such codebase must be managed in a version control system. Some popular VCS (Version Control System) include git, svn, and mercurial. If there exist multiple codebases, then it's not an application; it's a distributed system. Each component of that system will be known as an application that shall follow the principles of the 12-factor apps.
+## Codebase
+Each application must have only a single codebase. Each such codebase must be managed in a version control system. Some popular VCS (Version Control System) include git, svn, and mercurial. If there exist multiple codebases, then it's not an application; it's a distributed system. Each component of that system will be known as an application that shall follow the principles of the 12-factor apps.
 
-Dependencies-this factor states that we must always declare the dependencies in the manifest file, a file containing the metadata for the dependencies, like name, version. It increases the speed of the development as now the developer is free from the task of managing the correct version of the libraries. There is no need to explicitly download the required JARs anymore.
+## Dependencies
+this factor states that we must always declare the dependencies in the manifest file, a file containing the metadata for the dependencies, like name, version. It increases the speed of the development as now the developer is free from the task of managing the correct version of the libraries. There is no need to explicitly download the required JARs anymore.
 
-Config-The source code and the configurations must be completely separated from each other. We must store all the configurations like DB credentials, path, URI in the environment variables, as in general practice in the industry, application configurations vary from environment to environment, like dev, test, prod, etc.
+## Config
+The source code and the configurations must be completely separated from each other. We must store all the configurations like DB credentials, path, URI in the environment variables, as in general practice in the industry, application configurations vary from environment to environment, like dev, test, prod, etc.
 
-Backing services-any service that your application consumes over the network is known as a backing service. Your application must treat these services as resources which it is consuming over the network. It gives us the advantage that our services become easily interchangeable and offer great portability to our application.
+## Backing services 
+Any service that your application consumes over the network is known as a backing service. Your application must treat these services as resources which it is consuming over the network. It gives us the advantage that our services become easily interchangeable and offer great portability to our application.
 
-Build,Release and Run-he deployment of your application must be properly separated into three non-overlapping non-dependent phases namely build, release and run. The build phase constitutes the compilation of the code which in the end generates the artifact like a JAr or WAR file. The second phase, release, take the artifact file generated at the end of the previous phase and adds the configurations for a particular environment to it. The last phase includes the running of the instance of the application.
+## Build,Release and Run
+The deployment of your application must be properly separated into three non-overlapping non-dependent phases namely build, release and run. The build phase constitutes the compilation of the code which in the end generates the artifact like a JAr or WAR file. The second phase, release, take the artifact file generated at the end of the previous phase and adds the configurations for a particular environment to it. The last phase includes the running of the instance of the application.
 
-Processes-o achieve and fulfill this principle, our application must store any type of data generated by it in any persistent (stateful) datastore. But it doesn't mean that we can't use the in-memory of the processes of our application. We can use it to store as temporary storage. In simple terms, the usage of sticky sessions must be avoided. Sticky sessions, in simple terms, refers to catching the logged-in user's session data in the local memory of the process and then directing each subsequent request from that particular user to the same process. The problem with sticky sessions is that it causes uneven load balancing among the instances of the application.
+## Processes
+In order to achieve and fulfill this principle, our application must store any type of data generated by it in any persistent (stateful) datastore. But it doesn't mean that we can't use the in-memory of the processes of our application. We can use it to store as temporary storage. In simple terms, the usage of sticky sessions must be avoided. Sticky sessions, in simple terms, refers to catching the logged-in user's session data in the local memory of the process and then directing each subsequent request from that particular user to the same process. The problem with sticky sessions is that it causes uneven load balancing among the instances of the application.
 
-Port Binding-It binds itself to some particular port and listens to all the requests hitting on that port. You must also have observed it while designing an application or a microservice which runs on a particular port and you hit requests on that particular port using postman to get a response. This information that to which port our service will be listening to is also stored in the configuration file itself.
+## Port Binding
+It binds itself to some particular port and listens to all the requests hitting on that port. You must also have observed it while designing an application or a microservice which runs on a particular port and you hit requests on that particular port using postman to get a response. This information that to which port our service will be listening to is also stored in the configuration file itself.
 
-Concurrency-An application that follows this principle must be divided into smaller different processes instead of a single large application. Each such process must be able to start, terminate and replicate itself independently and at any time. This principle allows scaling our application very easily. By scaling out we refer to horizontal scaling in which we run multiple instances of our processes.
+## Concurrency
+An application that follows this principle must be divided into smaller different processes instead of a single large application. Each such process must be able to start, terminate and replicate itself independently and at any time. This principle allows scaling our application very easily. By scaling out we refer to horizontal scaling in which we run multiple instances of our processes.
 
-Disposability-obustness of an application refers to the graceful starting and termination of its processes without affecting the overall application's functionality. For example one of the processes of our application is storing the details of a newly added employee to the company into a database. But while doing so, in between an unexpected error occurs which causes the process to terminate in between unexpectedly. However, the state of our application or database must not be affected by it and the process must fail-safe. Also, it must start quickly whenever required
+## Disposability
+obustness of an application refers to the graceful starting and termination of its processes without affecting the overall application's functionality. For example one of the processes of our application is storing the details of a newly added employee to the company into a database. But while doing so, in between an unexpected error occurs which causes the process to terminate in between unexpectedly. However, the state of our application or database must not be affected by it and the process must fail-safe. Also, it must start quickly whenever required
 
-Development/production parity -It simply means that the development and production environment must be as similar as possible. The processes being used, technologies and the infrastructure must be the same. This will help you in a way that whatever error that can happen over time will happen at the development stage itself instead of surprisingly occurring in the production. This helps in the continuous deployment of our application and reduces the development time and efforts also.
+## Development/production parity
+It simply means that the development and production environment must be as similar as possible. The processes being used, technologies and the infrastructure must be the same. This will help you in a way that whatever error that can happen over time will happen at the development stage itself instead of surprisingly occurring in the production. This helps in the continuous deployment of our application and reduces the development time and efforts also.
 
-Logs-Whenever a request enters into the system, corresponding logs are made and they are treated as a sequence of events that can be used to debug when some problem occurs.
+## Logs
+Whenever a request enters into the system, corresponding logs are made and they are treated as a sequence of events that can be used to debug when some problem occurs.
 
-Admin processes-Most of the applications require a few one-off tasks to be executed before the actual flow of the application starts. These tasks are not required very often and hence, we generally create a script for it which we run from some other environment. On the other hand, the twelve-factor methodology says that such scripts must be made a part of our codebase itself managed in the version control system. These tasks should also follow twelve-factor principles.
+## Admin processes
+Most of the applications require a few one-off tasks to be executed before the actual flow of the application starts. These tasks are not required very often and hence, we generally create a script for it which we run from some other environment. On the other hand, the twelve-factor methodology says that such scripts must be made a part of our codebase itself managed in the version control system. These tasks should also follow twelve-factor principles.
+
+
+# Git vs Github
+Git - It is a version control system which runs locally. It manages and track changes in our code.
+Github - A web based platform for hosting git repositories. It provides UI for managing git repositories.
+
+# Git Configs 
+The are the configurations that the user sets in one's local system such as username and email so that git can track the people who have made changes and commits to the repo.
+
+# .gitignore 
+These are the files which git doesnt track. These can be configs file or environmental variables file.
