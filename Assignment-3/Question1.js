@@ -1,8 +1,8 @@
 "use strict"
 const ps=require("prompt-sync");
 const prompt=ps();
-let num1=prompt("enter number1");
-let num2=prompt("enter number2");
+let num1=parseInt(prompt("enter number1"));
+let num2=parseInt(prompt("enter number2"));
 
 let operation=prompt("enter the operation name");
 switch(operation)
