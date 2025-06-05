@@ -82,4 +82,4 @@ Github - A web based platform for hosting git repositories. It provides UI for m
 They are the configurations that the user sets in one's local system such as username and email so that git can track the people who have made changes and commits to the repo.
 
 # .gitignore 
-These are the files which git doesnt track. These can be configs file or environmental variables file.
+These are the files which git doesn't track. These can be configs file or environmental variables file.
