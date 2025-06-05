@@ -19,8 +19,8 @@ console.log(num1*num2);
  case "divide":
 console.log(num1/num2);
              break;
-             case "modulus":
-console.log(num1%num2)
+ case "modulus":
+ console.log(num1%num2)
              break;
   default:console.log("you have entered some other operation");
 
