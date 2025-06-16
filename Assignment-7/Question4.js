@@ -1,8 +1,6 @@
 const dummyTask = (id, delay) => {
     return () => new Promise((resolve, reject) => {
-        console.log(`Task ${id} started`)
         setTimeout(() => {
-            console.log(`${id} completed`);
             resolve()
         }, delay)
     });
@@ -14,7 +12,7 @@ class RateLimiter {
     constructor(maxConcurrent) {
         this.maxConcurrent = maxConcurrent;
         this.currentCount = 0;
-        this.que = [];
+        this.queue = [];
     }
 
     scheduleTask(taskFn) {
@@ -33,7 +31,7 @@ class RateLimiter {
                     this.currentCount--; 
                     console.log(`Current count: ${this.currentCount}`)
                     // does que have any task
-                    if (this.que.length > 0) {
+                    if (this.queue.length > 0) {
                         console.log(`Executing next task from queue, current count: ${this.currentCount}`);
                         const nextTask = this.que.shift();
                         nextTask();
@@ -46,7 +44,7 @@ class RateLimiter {
                 execute();
             } else {
                 console.log(`Current count: ${this.currentCount}, adding task to queue`);
-                this.que.push(execute)
+                this.queue.push(execute)
             }
 
 
